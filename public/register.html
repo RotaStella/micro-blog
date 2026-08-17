@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-Blog - Inscription</title>
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+  <div class="auth-bg-glow"></div>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo">✦</div>
+        <a href="#" class="logo-title">Micro<span>Blog</span></a>
+        <h1>Créer votre compte</h1>
+        <p>Rejoignez la communauté Micro-Blog</p>
+      </div>
+
+      <div id="messageBox" class="message-box"></div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="votre.email@exemple.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="motDePasse">Mot de passe</label>
+          <input type="password" id="motDePasse" placeholder="••••••••" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmMotDePasse">Confirmer le mot de passe</label>
+          <input type="password" id="confirmMotDePasse" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-auth">Créer mon compte</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Vous avez déjà un compte ? <a href="login.html">Se connecter</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/register.js"></script>
+</body>
+</html>

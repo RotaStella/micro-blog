@@ -1,0 +1,16 @@
+{
+  "name": "micro-blog",
+  "version": "1.0.0",
+  "description": "Application web de micro-blogging scolaire",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

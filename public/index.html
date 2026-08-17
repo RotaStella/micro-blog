@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Micro<span>Blog</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#nouveau">Nouvelle publication</a></li>
+          
+          <li class="user-menu-container">
+            <button id="userDropdownBtn" class="user-dropdown-btn">
+              <span id="welcomeUserName">Bonjour</span>
+              <span class="arrow-down">▼</span>
+            </button>
+            <div id="userDropdown" class="user-dropdown-menu">
+              <div id="userAccountLabel" class="dropdown-item user-info">👤 Mon compte</div>
+              <button id="btnSwitchAccount" class="dropdown-item btn-action">🔄 Changer de compte</button>
+              <button id="btnLogout" class="dropdown-item btn-action logout">🚪 Se déconnecter</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Partagez vos idées.<br><span class="text-gradient">Inspirez le monde.</span></h1>
+      <p>Publiez vos pensées, découvrez de nouvelles idées et partagez votre passion avec la communauté.</p>
+      <a href="#nouveau" class="btn-hero">Commencer à publier</a>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-container">
+      <div class="stat-card">
+        <h3 id="totalPublications">0</h3>
+        <p>Publications</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="totalCategories">0</h3>
+        <p>Catégories</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main-content">
+
+    <section id="publications" class="section">
+      <div class="section-header">
+        <h2>Dernières publications</h2>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Rechercher un article...">
+        </div>
+      </div>
+
+      <!-- Les filtres seront injectés dynamiquement par JavaScript -->
+      <div id="filterBar" class="filter-bar"></div>
+
+      <div id="articlesContainer" class="articles-grid"></div>
+    </section>
+
+    <section id="nouveau" class="section">
+      <div class="form-card">
+        <h2>Créer une publication</h2>
+        <div id="messageBox" class="message-box"></div>
+
+        <form id="articleForm">
+          <div class="form-group">
+            <label for="titre">Titre *</label>
+            <input type="text" id="titre" placeholder="Titre de votre article">
+          </div>
+
+          <div class="form-group">
+            <label for="categorie">Catégorie *</label>
+            <div class="category-select-wrapper">
+              <select id="categorie">
+                <option value="">Sélectionnez une catégorie</option>
+              </select>
+              <button type="button" id="btnToggleAddCategory" class="btn-secondary-action">
+                + Ajouter une catégorie
+              </button>
+            </div>
+
+            <!-- Formulaire masqué pour ajouter une nouvelle catégorie -->
+            <div id="addCategoryContainer" class="add-category-box hidden">
+              <input type="text" id="newCategoryInput" placeholder="Nouvelle catégorie">
+              <button type="button" id="btnAddCategory" class="btn-small-submit">Ajouter</button>
+            </div>
+            <div id="categoryMsg" class="inline-msg"></div>
+          </div>
+
+          <!-- Section Choix de l'image -->
+          <div class="form-group">
+            <label>Image de la publication (optionnelle)</label>
+
+            <!-- Option 1 : Fichier depuis l'appareil -->
+            <div class="image-upload-wrapper">
+              <input type="file" id="fileInput" accept="image/*" class="file-input-hidden">
+              <label for="fileInput" class="upload-dropzone">
+                <span class="upload-icon">📷</span>
+                <span class="upload-text">Choisir une image depuis mon appareil</span>
+                <span class="upload-subtext">PNG, JPG, GIF jusqu'à 5 Mo</span>
+              </label>
+
+              <!-- Prévisualisation de l'image sélectionnée -->
+              <div id="imagePreviewContainer" class="image-preview-box hidden">
+                <img id="imagePreview" src="" alt="Prévisualisation">
+                <div class="preview-actions">
+                  <span id="imageFileName" class="image-filename">✓ image.jpg</span>
+                  <button type="button" id="btnRemoveImage" class="btn-delete-image">Supprimer l'image</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="separator-text"><span>ou</span></div>
+
+            <!-- Option 2 : URL distante -->
+            <div>
+              <label for="image" class="sub-label">URL de l'image</label>
+              <input type="url" id="image" placeholder="https://exemple.com/image.jpg">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contenu">Contenu *</label>
+            <textarea id="contenu" rows="5" placeholder="Rédigez votre article ici..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Publier</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Micro-Blog. Projet Scolaire d'application web moderne.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
