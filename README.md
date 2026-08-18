@@ -75,7 +75,7 @@ micro-blog/
 
 ## Auteur
 
-Auteur : [Mon nom]
+Auteur : Rota Victoire Stella RANDRIANATOANDRO
 
 ## Contexte
 
