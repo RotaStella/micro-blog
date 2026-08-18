@@ -1,25 +1,82 @@
 # Micro-Blog
 
-Application web moderne et responsive de micro-blogging conçue dans le cadre d'un projet scolaire.
+Micro-Blog est une petite application web de micro-blogging où on peut publier et découvrir des courtes publications.
 
-## Présentation
+## Description
 
-Micro-Blog permet aux utilisateurs de consulter, rechercher, filtrer et publier de courts articles en ligne. L'application intègre un système d'authentification simple basé sur `localStorage` et la persistance de données en fichier JSON.
+Le but du projet est simple : permettre à des utilisateurs inscrits de partager des publications (avec un titre, une catégorie, un contenu et une image si on veut) et de les consulter, rechercher ou filtrer facilement. C'est un projet réalisé pour s'entraîner au développement web avec un vrai serveur derrière.
 
-## Note pédagogique sur la sécurité
+## Fonctionnalités
 
-> **Attention** : Ce projet utilise un stockage simple des mots de passe en texte clair dans un fichier JSON ainsi qu'une authentification gérée côté client via `localStorage`. Ce choix est fait dans un cadre strictement scolaire et pédagogique pour maintenir le code accessible aux débutants. Dans un environnement de production réel, il conviendrait de hacher les mots de passe avec `bcrypt` et d'utiliser un système de session sécurisé par `JWT` ou `express-session`.
+* Inscription et connexion (avec vérification de l'email et du mot de passe)
+* Déconnexion / changement de compte
+* Création d'une publication (titre, catégorie, contenu)
+* Ajout d'une image, soit depuis l'appareil, soit via une URL
+* Création de nouvelles catégories
+* Filtrage des publications par catégorie
+* Recherche parmi les publications
+* Suppression d'une publication
+* Affichage du nombre de publications et de catégories
 
-## Technologies Utilisées
+## Technologies utilisées
 
-- **Frontend** : HTML5, CSS3, JavaScript Vanilla (Fetch API, LocalStorage)
-- **Backend** : Node.js, Express.js
-- **Stockage** : Fichiers JSON (`data/articles.json` et `data/users.json`)
+* HTML5, CSS3, JavaScript pour la partie front-end
+* Node.js et Express.js pour le serveur
+* Fichiers JSON pour stocker les utilisateurs, publications et catégories
+* LocalStorage pour garder l'utilisateur connecté d'une page à l'autre
+* Hébergé sur Render
+
+## Structure du projet
+
+```text
+micro-blog/
+├── server.js
+├── package.json
+├── data/
+│   ├── users.json
+│   ├── articles.json
+│   └── categories.json
+└── public/
+    ├── index.html
+    ├── login.html
+    ├── register.html
+    ├── css/
+    │   ├── style.css
+    │   ├── login.css
+    │   └── register.css
+    └── js/
+        ├── script.js
+        ├── login.js
+        └── register.js
+```
 
 ## Installation
 
-1. Ouvrir un terminal dans le dossier du projet.
-2. Exécuter la commande suivante pour installer les dépendances :
-
+1. Cloner ou télécharger le projet
+2. Ouvrir le dossier dans VS Code
+3. Ouvrir un terminal et installer les dépendances :
 ```bash
-npm install
+   npm install
+```
+4. Démarrer le serveur :
+```bash
+   npm start
+```
+5. Ouvrir `http://localhost:3000` dans le navigateur
+
+## Utilisation
+
+1. Créer un compte ou se connecter
+2. Consulter les publications sur la page d'accueil
+3. Rechercher ou filtrer par catégorie
+4. Créer une publication (avec ou sans image)
+5. Supprimer une publication si besoin
+6. Se déconnecter depuis le menu utilisateur
+
+## Auteur
+
+Auteur : [Mon nom]
+
+## Contexte
+
+Projet réalisé dans un cadre scolaire pour pratiquer le développement web full-stack.
